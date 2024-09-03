@@ -1,0 +1,31 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+	  "title": "Live demo page for Anti-Spam Bee Plugin",
+	  "description": "Live demo page for Anti-Spam Bee Plugin",
+	  "author": "W3netLab",
+	  "categories": ["Content", "anti-spam-plugin"]
+	},
+	"plugins": {
+	  "antispam-bee": {}
+	},
+	"landingPage": "/?p=2",
+	"steps": [
+	  {
+		"step": "login"
+	  },
+	  {
+		"step": "writeFile",
+		"path": "/wordpress/wp-content/postcontent.md",
+		"data": {
+		  "resource": "url",
+		  "url": "https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/postcontent.md"
+		}
+	  },
+	  {
+		"step": "wp-cli",
+		"command": "wp post create --post_title='Live demo page for Anti-Spam Bee Plugin' --post_status='publish' --post_content='$(cat /wordpress/wp-content/postcontent.md)'"
+	  }
+	]
+  }
+  
