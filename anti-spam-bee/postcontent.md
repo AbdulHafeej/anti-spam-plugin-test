@@ -21,7 +21,6 @@
     }
 </style>
 <div id="copyContainer">
-<h2>Live Demo: AntiSpam Bee WordPress Plugin</h2>
 <p>Test AntiSpam Bee plugin’s capabilities by entering sample spam and ligitimate comment script in the below WordPress Comment Form.</p>
     <div id="copyText2" class="copy-item" style="cursor:pointer;">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon-sm">
