@@ -20,7 +20,7 @@
     },
     {
       "step": "writeFile",
-      "path": "/wordpress/wp-content/plugins/0-plugin.php",
+      "path": "/wordpress/wp-content/plugins/post-updater.php",
       "data": {
         "resource": "url",
         "url": "https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/post-updater.php"
@@ -37,7 +37,7 @@
     {
       "step": "activatePlugin",
       "pluginName": "Post Updater",
-      "pluginPath": "0-plugin.php"
+      "pluginPath": "post-updater.php"
     }
   ]
 }
