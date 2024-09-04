@@ -1,0 +1,22 @@
+/* custom-style.css */
+.copy-item {
+    padding: 16px;
+    font-family: "Roboto Condensed", Sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+#copyText2, #copyText4 {
+    color: #696CFF;
+    background-color: #e6e6e6;
+}
+
+#copyText2.copy-item:hover, #copyText4.copy-item:hover {
+    color: #e6e6e6;
+    background-color: #696CFF;
+}
+
+.icon-copied {
+    color: grey; /* Change this color as needed */
+}
