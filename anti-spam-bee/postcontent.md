@@ -19,4 +19,4 @@
 <link rel="stylesheet" href="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/style.css">
 
 <!-- Link to external JavaScript -->
-<script src="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/style.css"></script>
+<script src="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/script.js"></script>
