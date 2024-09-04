@@ -1,13 +1,14 @@
 {
-  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "meta": {
     "title": "Live demo page for Anti-Spam Bee Plugin",
-    "description": "Live demo page for Anti-Spam Bee Plugin",
-    "author": "W3netLab",
+    "author": "zieladam",
+    "description": "Live demo page for Anti-Spam Bee Plugin.",
     "categories": [
-      "Content",
-      "anti-spam-plugin"
+      "plugins"
     ]
+  },
+  "features": {
+    "networking": true
   },
   "plugins": [
     "antispam-bee"
@@ -16,6 +17,27 @@
   "steps": [
     {
       "step": "login"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/0-plugin.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/post-updater.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/postcontent.md",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/postcontent.md"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginName": "Post Updater",
+      "pluginPath": "0-plugin.php"
     }
   ]
 }
