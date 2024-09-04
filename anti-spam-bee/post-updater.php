@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post Updater
 Description: Updates the post with ID 1 upon activation using content from postcontent.md.
-Version: 1.1
+Version: 1.2
 Author: W3netLab
 */
 
@@ -11,7 +11,12 @@ function update_post_on_activation() {
 
     // Fetch the content from the URL
     $url = 'https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/postcontent.md';
-    $post_content = file_get_contents($url);
+    $post_content = @file_get_contents($url);
+
+    if ($post_content === FALSE) {
+        // Handle the error if the content could not be retrieved
+        $post_content = 'Error: Could not retrieve the content from the URL.';
+    }
 
     // Prepare the updated post array
     $updated_post = array(
@@ -26,4 +31,3 @@ function update_post_on_activation() {
 
 register_activation_hook(__FILE__, 'update_post_on_activation');
 ?>
-
