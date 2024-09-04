@@ -1,22 +1,28 @@
-<p>Test AntiSpam Bee plugin’s capabilities by entering sample spam and legitimate comment script in the below WordPress Comment Form.</p>
-<div id="copyContainer">
-    <div id="copyText2" class="copy-item" style="cursor:pointer;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon-sm">
-            <path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path>
-        </svg>
-        Click Here To Copy Sample Spam Message.
-    </div>
 
-    <div id="copyText4" class="copy-item" style="cursor:pointer; margin:0px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon-sm">
-            <path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path>
-        </svg>
-       Click Here To Copy Sample Legit Message.
-    </div>
+<p>Test AntiSpam Bee plugin’s capabilities by entering sample spam and ligitimate comment script in the below WordPress Comment Form.</p>
+<h2>Click the Button to Copy the legit comment Below:</h2>
+<div id="copyBox" style="border: 1px solid #ccc; padding: 10px; width: 100%; height: auto; background-color: #f9f9f9; margin-bottom: 10px;">
+    Dear Jane Doe,
+    <br><br>
+    Thank you for reaching out to our customer service team. We have received your inquiry and will get back to you within 24-48 hours.
+    <br><br>
+    For urgent matters, please feel free to contact us directly at (123) 456-7890.
+    <br><br>
+    Best Regards,
+    <br>
+    Customer Support Team
 </div>
+<button onclick="copyText()" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">Click To Copy Legit Text</button>
 
-<!-- Link to external CSS -->
-<link rel="stylesheet" href="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/style.css">
-
-<!-- Link to external JavaScript -->
-<script src="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/script.js"></script>
+<script>
+    function copyText() {
+        var copyBox = document.getElementById('copyBox');
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = copyBox.innerText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('Text copied to clipboard!');
+    }
+</script>
