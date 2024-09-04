@@ -16,7 +16,7 @@ function update_post_on_activation() {
     // Prepare the updated post array
     $updated_post = array(
         'ID'           => $post_id,
-        'post_title'   => 'Updated Post Title',
+        'post_title'   => 'Use Below Form To Test Anti-Spam Bee Plugin',
         'post_content' => $post_content,
     );
 
