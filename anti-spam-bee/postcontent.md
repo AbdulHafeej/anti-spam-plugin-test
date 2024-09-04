@@ -1,28 +1,58 @@
+<div id="copyContainer" style="width: 100%;">
+    <p>Test AntiSpam Bee plugin’s capabilities by entering sample spam and legitimate comment script in the below WordPress Comment Form.</p>
+    
+    <button id="copyText2" onclick="copyText('copyText2')" style="display: block; width: 100%; padding: 16px; font-family: 'Roboto Condensed', Sans-serif; font-size: 15px; font-weight: 400; margin-bottom: 6px; color: #696CFF; background-color: #e6e6e6; border: none; cursor: pointer; text-align: left; box-sizing: border-box; border-radius: 4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon-sm" style="vertical-align: middle; margin-right: 8px;">
+            <path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path>
+        </svg>
+        Click Here To Copy Sample Spam Message.
+    </button>
 
-<p>Test AntiSpam Bee plugin’s capabilities by entering sample spam and ligitimate comment script in the below WordPress Comment Form.</p>
-<h2>Click the Button to Copy the legit comment Below:</h2>
-<div id="copyBox" style="border: 1px solid #ccc; padding: 10px; width: 100%; height: auto; background-color: #f9f9f9; margin-bottom: 10px;">
-    Dear Jane Doe,
-    <br><br>
-    Thank you for reaching out to our customer service team. We have received your inquiry and will get back to you within 24-48 hours.
-    <br><br>
-    For urgent matters, please feel free to contact us directly at (123) 456-7890.
-    <br><br>
-    Best Regards,
-    <br>
-    Customer Support Team
+    <button id="copyText4" onclick="copyText('copyText4')" style="display: block; width: 100%; padding: 16px; font-family: 'Roboto Condensed', Sans-serif; font-size: 15px; font-weight: 400; margin: 0px; color: #696CFF; background-color: #e6e6e6; border: none; cursor: pointer; text-align: left; box-sizing: border-box; border-radius: 4px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="icon-sm" style="vertical-align: middle; margin-right: 8px;">
+            <path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path>
+        </svg>
+        Click Here To Copy Sample Legit Message.
+    </button>
 </div>
-<button onclick="copyText()" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">Click To Copy Legit Text</button>
 
 <script>
-    function copyText() {
-        var copyBox = document.getElementById('copyBox');
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = copyBox.innerText;
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
-        alert('Text copied to clipboard!');
+function copyText(buttonId) {
+    let textToCopy;
+    
+    // Determine which text to copy based on the buttonId
+    if (buttonId === "copyText2") {
+        textToCopy = `Dear John,\n\nYou've been selected for an exclusive investment opportunity with guaranteed high returns. Act now to double, even triple, your money in just weeks.\n\nDon't miss out on this once-in-a-lifetime chance. Click the link to secure your spot and start earning big today!\n\nBest Regards,\nHenry Maxwell`;
+    } else if (buttonId === "copyText4") {
+        textToCopy = `Dear Jane Doe,\n\nThank you for reaching out to our customer service team. We have received your inquiry and will get back to you within 24-48 hours.\n\nFor urgent matters, please feel free to contact us directly at (123) 456-7890.\n\nBest Regards,\nCustomer Support Team`;
     }
+
+    // Create a hidden textarea element
+    const textarea = document.createElement("textarea");
+    textarea.value = textToCopy;
+    document.body.appendChild(textarea);
+
+    // Select the textarea content
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text to clipboard
+    document.execCommand("copy");
+
+    // Remove the textarea from the DOM
+    document.body.removeChild(textarea);
+
+    // Alert the user
+    alert('Sample text copied to clipboard!');
+
+    // Change the SVG icon color
+    const button = document.getElementById(buttonId);
+    const svgIcon = button.querySelector("svg");
+    svgIcon.style.color = 'grey'; // Update color directly
+
+    // Remove the color change after 0.5 seconds
+    setTimeout(() => {
+        svgIcon.style.color = ''; // Reset color
+    }, 500);
+}
 </script>
