@@ -10,7 +10,7 @@ function update_post_on_activation() {
     $post_id = 1;
 
     // Read the content of the postcontent.md file
-    $file_path = plugin_dir_path(__FILE__) . 'postcontent.html';
+    $file_path = plugin_dir_path(__FILE__) . 'postcontent.md';
     $post_content = file_get_contents($file_path);
 
     // Prepare the updated post array
