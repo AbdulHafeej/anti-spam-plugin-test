@@ -25,7 +25,7 @@
 </div>
 <button onclick="copyText2()" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">Copy Text</button>
 <script>
-    function copyText1() {
+  /*  function copyText1() {
         var copyBox = document.getElementById('copyBox1');
         var tempTextArea = document.createElement('textarea');
         tempTextArea.value = copyBox.innerText;
@@ -44,6 +44,92 @@
         document.execCommand('copy');
         document.body.removeChild(tempTextArea);
         alert('Text copied to clipboard!');
+    }*/
+
+<script>
+ /*   function copyText1() {
+        // Get the content from the copyBox1
+        var copyBox = document.getElementById('copyBox1');
+        var copiedText = copyBox.innerText;
+
+        // Copy the content to clipboard
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = copiedText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('Text copied to clipboard!');
+
+        // Now insert the copied text into the correct textarea (comment box)
+        var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+        if (commentTextarea) {
+            commentTextarea.value = copiedText;
+        }
+    }
+
+    function copyText2() {
+        // Get the content from the copyBox2
+        var copyBox = document.getElementById('copyBox2');
+        var copiedText = copyBox.innerText;
+
+        // Copy the content to clipboard
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = copiedText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('Text copied to clipboard!');
+
+        // Now insert the copied text into the correct textarea (comment box)
+        var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+        if (commentTextarea) {
+            commentTextarea.value = copiedText;
+        }
+    }
+*/
+    function copyText1() {
+        // Get the content from the copyBox1
+        var copyBox = document.getElementById('copyBox1');
+        var copiedText = copyBox.innerText;
+
+        // Copy the content to clipboard
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = copiedText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('Text copied to clipboard!');
+
+        // Now insert the copied text into the correct textarea (comment box)
+        var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+        if (commentTextarea) {
+            commentTextarea.value = copiedText;
+        }
+    }
+
+    function copyText2() {
+        // Get the content from the copyBox2
+        var copyBox = document.getElementById('copyBox2');
+        var copiedText = copyBox.innerText;
+
+        // Copy the content to clipboard
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = copiedText;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        alert('Text copied to clipboard!');
+
+        // Now insert the copied text into the correct textarea (comment box)
+        var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+        if (commentTextarea) {
+            commentTextarea.value = copiedText;
+        }
     }
 </script>
+
 
