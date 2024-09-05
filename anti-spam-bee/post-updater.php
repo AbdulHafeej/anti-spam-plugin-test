@@ -28,13 +28,35 @@ function update_post_on_activation() {
     foreach ($comments as $comment) {
         wp_delete_comment($comment->comment_ID, true);
     }
+
+    // Add custom CSS to hide header and footer for this post
+    add_custom_css_to_post_content($post_id);
+}
+
+function add_custom_css_to_post_content($post_id) {
+    // Define the CSS to hide header and footer
+    $custom_css = '<style>
+        header, footer {
+            display: none !important;
+        }
+    </style>';
+
+    // Append the CSS to the post content
+    $post_content = get_post_field('post_content', $post_id);
+    $post_content .= $custom_css;
+    
+    // Update the post with the new content
+    $updated_post = array(
+        'ID'           => $post_id,
+        'post_content' => $post_content,
+    );
+    wp_update_post($updated_post);
 }
 
 function add_custom_css_to_hide_header_footer() {
     if (is_single(1)) {
         echo '<style>
-            header.wp-block-template-part, 
-            footer.wp-block-template-part {
+            header, footer {
                 display: none !important;
             }
         </style>';
