@@ -1,5 +1,4 @@
-    <!-- Copy Box Section -->
-    <h2>Click the Button to Copy the Text Below:</h2>
+<h2>Click the Button to Copy the Text Below:</h2>
     <div id="copyBox1" style="border: 1px solid #ccc; padding: 10px; width: 100%; height: auto; background-color: #f9f9f9; margin-bottom: 10px;">
         Dear Jane Doe,<br><br>
         Thank you for reaching out to our customer service team. We have received your inquiry and will get back to you within 24-48 hours.<br><br>
