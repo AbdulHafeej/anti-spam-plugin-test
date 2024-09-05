@@ -7,34 +7,31 @@ As a fellow developer, I found your code snippets incredibly helpful. Keep up th
 </div>
 <button onclick="copyText2()" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">Click To Fill Legit Comment Text in Below Form</button>
 <script>
-    function copyText1() {
-            var copyBox = document.getElementById('copyBox1');
-            var copiedText = copyBox.innerText;
-            var tempTextArea = document.createElement('textarea');
-            tempTextArea.value = copiedText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-            alert('The comment form below is already filled with a spam comment.');
-            var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
-            if (commentTextarea) {
-                commentTextarea.value = copiedText;
-            }
-    }
-    function copyText2() {
-            var copyBox = document.getElementById('copyBox2');
-            var copiedText = copyBox.innerText;
-            var tempTextArea = document.createElement('textarea');
-            tempTextArea.value = copiedText;
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextArea);
-            alert('The comment form below is already filled with a legitimate comment.');
-            var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
-            if (commentTextarea) {
-                commentTextarea.value = copiedText;
-            }
-    }
+function copyText1() {
+var copyBox = document.getElementById('copyBox1');
+var copiedText = copyBox.innerText;
+var tempTextArea = document.createElement('textarea');
+tempTextArea.value = copiedText;
+document.body.appendChild(tempTextArea);
+tempTextArea.select();
+document.execCommand('copy');
+document.body.removeChild(tempTextArea);
+alert('The comment form below is already filled with a spam comment.');
+var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+if (commentTextarea) {commentTextarea.value = copiedText;}
+}
+function copyText2() {
+var copyBox = document.getElementById('copyBox2');
+var copiedText = copyBox.innerText;
+var tempTextArea = document.createElement('textarea');
+tempTextArea.value = copiedText;
+document.body.appendChild(tempTextArea);
+tempTextArea.select();
+document.execCommand('copy');
+document.body.removeChild(tempTextArea);
+alert('The comment form below is already filled with a legitimate comment.');
+var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
+if (commentTextarea) {commentTextarea.value = copiedText;
+}
+}
 </script>
