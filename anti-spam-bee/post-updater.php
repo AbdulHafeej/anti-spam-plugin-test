@@ -30,14 +30,17 @@ function update_post_on_activation() {
     }
 }
 
-function hide_header_footer() {
+function add_custom_css_to_hide_header_footer() {
     if (is_single(1)) {
-        remove_action('wp_head', '_wp_render_title_tag', 1); // Remove title tag from head
-        remove_action('wp_head', 'wp_enqueue_scripts', 1); // Remove scripts and styles
-        remove_action('wp_footer', 'wp_footer', 1); // Remove footer
+        echo '<style>
+            body.pageid-1 header, 
+            body.pageid-1 footer {
+                display: none !important;
+            }
+        </style>';
     }
 }
 
-add_action('wp', 'hide_header_footer');
+add_action('wp_head', 'add_custom_css_to_hide_header_footer');
 register_activation_hook(__FILE__, 'update_post_on_activation');
 ?>
