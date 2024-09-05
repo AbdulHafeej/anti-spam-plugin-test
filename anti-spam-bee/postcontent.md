@@ -16,7 +16,7 @@ document.body.appendChild(tempTextArea);
 tempTextArea.select();
 document.execCommand('copy');
 document.body.removeChild(tempTextArea);
-alert('The comment form below is already filled with a spam comment. To test whether promotional spam comments are blocked after installing the Anti-Spam Bee plugin, please submit the form. Our free SecureForm 7 plugin automatically prevents such comments from being posted immediately, eliminating the need for manual review by the site owner. This plugin is powered by advanced AI technology from OpenAI.');
+alert('The comment form below is already filled with a spam comment. To test whether promotional spam comments are blocked after installing the Anti-Spam Bee plugin, please submit the form. Our free SecureForm 7 plugin automatically prevents such comments from being posted immediately, eliminating the need for manual review by the site owner. SecureForm7 is powered by advanced AI technology from OpenAI.');
 var commentTextarea = document.querySelector(".comment-form-comment textarea#comment");
 if (commentTextarea) {commentTextarea.value = copiedText;}
 }
