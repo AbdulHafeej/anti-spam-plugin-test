@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Post Updater
-Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post.
-Version: 1.1
+Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post. Also hides header and footer on that post.
+Version: 1.2
 Author: W3netLab
 */
 
@@ -31,4 +31,22 @@ function update_post_on_activation() {
 }
 
 register_activation_hook(__FILE__, 'update_post_on_activation');
+
+// Function to remove header and footer from a specific page
+function remove_header_footer_for_specific_page() {
+    if (is_page(1)) { // Check if the current page ID is 1
+        remove_action('wp_head', '_wp_render_title_tag', 1);
+        remove_action('wp_head', 'wp_generator');
+        remove_action('wp_head', 'rsd_link');
+        remove_action('wp_head', 'wlwmanifest_link');
+        remove_action('wp_head', 'feed_links', 2);
+        remove_action('wp_head', 'feed_links_extra', 3);
+        remove_action('wp_head', 'print_emoji_detection_script', 7);
+        remove_action('wp_head', 'print_emoji_styles');
+        remove_action('wp_footer', 'wp_footer');
+        remove_action('wp_body_open', 'wp_body_open');
+    }
+}
+
+add_action('template_redirect', 'remove_header_footer_for_specific_page');
 ?>
