@@ -24,27 +24,6 @@
     Customer Support Team
 </div>
 <button onclick="copyText2()" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer;">Copy Text</button>
-<script>
-  /*  function copyText1() {
-        var copyBox = document.getElementById('copyBox1');
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = copyBox.innerText;
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
-        alert('Text copied to clipboard!');
-    }
-    function copyText2() {
-        var copyBox = document.getElementById('copyBox2');
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = copyBox.innerText;
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
-        alert('Text copied to clipboard!');
-    }*/
 
 <script>
  /*   function copyText1() {
