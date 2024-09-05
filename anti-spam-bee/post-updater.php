@@ -33,8 +33,8 @@ function update_post_on_activation() {
 function add_custom_css_to_hide_header_footer() {
     if (is_single(1)) {
         echo '<style>
-            body.pageid-1 header, 
-            body.pageid-1 footer {
+            header.wp-block-template-part, 
+            footer.wp-block-template-part {
                 display: none !important;
             }
         </style>';
