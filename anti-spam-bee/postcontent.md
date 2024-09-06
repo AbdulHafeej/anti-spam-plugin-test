@@ -34,4 +34,13 @@ var commentTextarea = document.querySelector(".comment-form-comment textarea#com
 if (commentTextarea) {commentTextarea.value = copiedText;
 }
 }
+function modifyStyles() {
+var spacers = document.querySelectorAll('.wp-block-spacer');
+spacers.forEach(function(spacer) {
+spacer.style.height = '0';});
+var separators = document.querySelectorAll('.wp-block-separator');
+separators.forEach(function(separator) {
+separator.style.marginBottom = '0';});
+}
+window.onload = modifyStyles;
 </script>
