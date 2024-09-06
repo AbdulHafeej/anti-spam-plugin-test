@@ -35,12 +35,6 @@ register_activation_hook(__FILE__, 'update_post_on_activation');
 // Function to enqueue the custom stylesheet
 function enqueue_custom_stylesheet() {
     if (is_single()) {
-        // The URL of the CSS file
-        $css_url = 'https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/style.css';
-        
-        // Enqueue the stylesheet in the head
-        wp_enqueue_style('custom-post-stylesheet', $css_url);
-
         // Enqueue the custom script for inline CSS
         wp_enqueue_script('custom-inline-css', plugin_dir_url(__FILE__) . 'inline-css.js', array(), null, true);
     }
