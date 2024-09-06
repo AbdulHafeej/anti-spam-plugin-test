@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Post Updater
-Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post.
+Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post. Also adds a CSS stylesheet to every post page footer section.
 Version: 1.1
 Author: W3netLab
 */
@@ -31,4 +31,12 @@ function update_post_on_activation() {
 }
 
 register_activation_hook(__FILE__, 'update_post_on_activation');
+
+function add_custom_css_to_footer() {
+    if (is_single()) {
+        echo '<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/AbdulHafeej/anti-spam-plugin-test/main/anti-spam-bee/style.css">';
+    }
+}
+
+add_action('wp_footer', 'add_custom_css_to_footer');
 ?>
