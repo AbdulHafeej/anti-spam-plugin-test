@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Post Updater
-Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post. Also adds a CSS stylesheet to every post page header and footer.
-Version: 1.1
+Description: Updates the post with ID 1 upon activation using the content from postcontent.md and deletes all comments of the post. Also adds a CSS stylesheet to every post page header and footer, and adds inline CSS to hide specific elements.
+Version: 1.2
 Author: W3netLab
 */
 
@@ -40,6 +40,9 @@ function enqueue_custom_stylesheet() {
         
         // Enqueue the stylesheet in the head
         wp_enqueue_style('custom-post-stylesheet', $css_url);
+
+        // Enqueue the custom script for inline CSS
+        wp_enqueue_script('custom-inline-css', plugin_dir_url(__FILE__) . 'inline-css.js', array(), null, true);
     }
 }
 
