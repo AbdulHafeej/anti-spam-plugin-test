@@ -40,7 +40,7 @@ spacers.forEach(function(spacer) {
 spacer.style.height = '0';});
 var separators = document.querySelectorAll('.wp-block-separator');
 separators.forEach(function(separator) {
-separator.style.marginBottom = '0';});
+separator.style.margin = '0';});
 }
 window.onload = modifyStyles;
 </script>
