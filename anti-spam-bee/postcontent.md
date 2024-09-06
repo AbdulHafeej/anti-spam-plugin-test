@@ -34,25 +34,32 @@ var commentTextarea = document.querySelector(".comment-form-comment textarea#com
 if (commentTextarea) {commentTextarea.value = copiedText;
 }
 }
-function modifyStyles() {
-var spacers = document.querySelectorAll('.wp-block-spacer');
-spacers.forEach(function(spacer) {
-spacer.style.height = '0';});
-var separators = document.querySelectorAll('.wp-block-separator');
-separators.forEach(function(separator) {
-separator.style.marginBottom = '0';});
-var headings = document.querySelectorAll('.wp-block-comments .wp-block-heading');
-headings.forEach(function(heading) {
-heading.style.marginTop = '0';});
-var replyTitles = document.querySelectorAll('.comment-respond .comment-reply-title');
-replyTitles.forEach(function(replyTitle) {
-replyTitle.style.marginTop = '0';});
+document.addEventListener('DOMContentLoaded', function() {
 var headers = document.querySelectorAll('.header.wp-block-template-part');
 headers.forEach(function(header) {
-header.style.display = 'none';});
+header.style.display = 'none';
+});
 var footers = document.querySelectorAll('.footer.wp-block-template-part');
 footers.forEach(function(footer) {
-footer.style.display = 'none';});
-}
-window.onload = modifyStyles;
+footer.style.display = 'none';
+});
+});
+window.onload = function() {
+var spacers = document.querySelectorAll('.wp-block-spacer');
+spacers.forEach(function(spacer) {
+spacer.style.height = '0';
+});
+var separators = document.querySelectorAll('.wp-block-separator');
+separators.forEach(function(separator) {
+separator.style.marginBottom = '0';
+});
+var headings = document.querySelectorAll('.wp-block-comments .wp-block-heading');
+headings.forEach(function(heading) {
+heading.style.marginTop = '0';
+});
+var replyTitles = document.querySelectorAll('.comment-respond .comment-reply-title');
+replyTitles.forEach(function(replyTitle) {
+replyTitle.style.marginTop = '0';
+});
+};
 </script>
