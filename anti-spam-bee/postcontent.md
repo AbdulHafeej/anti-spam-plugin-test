@@ -51,5 +51,10 @@ var replyTitles = document.querySelectorAll('.comment-respond .comment-reply-tit
 replyTitles.forEach(function(replyTitle) {
 replyTitle.style.marginTop = '0';
 });
+var navWpblock = document.querySelectorAll('nav.wp-block-group');
+navWpblock.forEach(function(nav) {
+nav.style.margin = '0';
+nav.style.padding = '0';
+});
 };
 </script>
