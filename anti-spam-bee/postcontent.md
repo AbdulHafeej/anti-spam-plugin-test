@@ -34,4 +34,22 @@ var commentTextarea = document.querySelector(".comment-form-comment textarea#com
 if (commentTextarea) {commentTextarea.value = copiedText;
 }
 }
+window.onload = function() {
+var spacers = document.querySelectorAll('.wp-block-spacer');
+spacers.forEach(function(spacer) {
+spacer.style.height = '0';
+});
+var separators = document.querySelectorAll('.wp-block-separator');
+separators.forEach(function(separator) {
+separator.style.marginBottom = '0';
+});
+var headings = document.querySelectorAll('.wp-block-comments .wp-block-heading');
+headings.forEach(function(heading) {
+heading.style.marginTop = '0';
+});
+var replyTitles = document.querySelectorAll('.comment-respond .comment-reply-title');
+replyTitles.forEach(function(replyTitle) {
+replyTitle.style.marginTop = '0';
+});
+};
 </script>
